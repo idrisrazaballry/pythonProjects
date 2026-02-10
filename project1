@@ -37,6 +37,30 @@ def access_account():
   name= input("Enter your name:").strip
   if name in accounts:
     account = accounts[name]
-    print(f"Welcome, {name}!")
+    while True:
+      print("\n----Account Menu----")
+      print("1. Deposit")
+      print("2. Withdraw")
+      print("3. Show details")
+      print("4. Exit")
+      choice=input("Enter your choice")
+      if choice=='1':
+        amount=float(input("Enter deposit amount"))
+        account.deposit(amount)
+      elif choice=='2':
+        amount=float(input("Enter your withdrawal amount"))
+        account.withdraw(amount)
+      elif choice=='3':
+        account.show_details()
+      elif choice=='4':
+        print("Existing account menu.")
+        break
+      else:
+        print("Invalid choice. Please select a valid option.")
+  else:
+    print("Account not found. Please create an account first.")
 
+#Main Menu
+while True:
+  print("\n---Bank Account Siulator---")
   
