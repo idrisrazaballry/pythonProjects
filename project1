@@ -24,4 +24,19 @@ class BankAccount:
     print(f"Account holder:{self.account_holder}")
     print(f"Account Balance: $(self.balance)")
 
+acounts={}
+
+def create_account():
+  name=input("Enter account holder's name: ").strip()
+  initial_deposit = float(input("Enter the initial amount:"))
+  account = BankAccount(name, initial_deposit)
+  accounts[name]=account
+  print("Account created successfully!")
+
+def access_account():
+  name= input("Enter your name:").strip
+  if name in accounts:
+    account = accounts[name]
+    print(f"Welcome, {name}!")
+
   
