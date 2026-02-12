@@ -48,5 +48,3 @@ while True:
 
 
 
-fghjkl;'
-ghjkl;'
