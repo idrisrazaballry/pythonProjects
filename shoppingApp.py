@@ -45,6 +45,3 @@ while True:
     else:
 
         print("Invalid choice, please try again")
-
-
-
