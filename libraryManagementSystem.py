@@ -33,4 +33,40 @@ class Library:
                 print(f"Book '{title}' has been borrowed.")
                 return
         print(f"Book '{title}' is not available for borrowing.")
+def return_book(self, title):
+        for book in self.books:
+            if book.title == title and book.is_borrowed:
+                book.is_borrowed = False
+                print(f"Book '{title}' has been returned.")
+                return
+        print(f" Book '{title}' is not in the library.")
+        
+    #Main program
+library= Library() 
+while True:
+    print("\n ----Library Management System----")
+    print("1. Add Book")
+    print("2. View Books")
+    print("3. Borrow Book")
+    print("4. Return Book")
+    print("5. Exit")
+    
+    choice=input("Enter your choice(1-5) :").strip()
+    if choice=='1':
+        title =input("Enter book title:").strip()
+        author = input("Enter author name:").strip()
+        library.add_book(title, author)
+    elif choice=='2':
+        library.view_books()
+    elif choice=='3':
+        title=input("Enter book title to borrow:").strip()
+        library.borrow_book(title)
+    elif choice=='4':
+        title=input("Enter the book title to return:").strip()
+        library.return_book(title)
+    elif choice=='5':
+        print("Exiting the library Management System. Have a Good dday!")
+        break
+    else:
+        print("Invalid choice. Please select the valid choice.")  
 
