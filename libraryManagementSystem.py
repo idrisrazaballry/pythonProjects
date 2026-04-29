@@ -74,7 +74,4 @@ while True:
 fghjkl;'
 ';lkjhgfkl;'
 ';lkjfhjkl;'
-';lkjhghjkl;'
-';lkjhhjkl;'
-';lkjhghjkl;'
-';lkj
+';lk
