@@ -49,6 +49,4 @@ def edit_contact():
         print("1. Edit Phone")
         print("2. Edit Email")
         print("3. ")
-        ghjkl;'
-        ';lkjgffghjkl;'
-        ';lkjhgfghjk'
+        ghjkl;
