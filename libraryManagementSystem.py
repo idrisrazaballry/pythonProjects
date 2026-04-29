@@ -71,7 +71,3 @@ while True:
         break
     else:
         print("Invalid choice. Please select the valid choice.")  
-fghjkl;'
-';lkjhgfkl;'
-';lkjfhjkl;'
-';lk
