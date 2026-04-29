@@ -52,6 +52,3 @@ def edit_contact():
         ghjkl;'
         ';lkjgffghjkl;'
         ';lkjhgfghjk'
-        ';lkjhghjkl;'
-        ';lkjh'
-        ';lkjhg
