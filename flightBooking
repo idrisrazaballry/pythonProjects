@@ -1,0 +1,90 @@
+import random
+all_flights=[
+    {
+        'flightID':'1ABC234',
+        'flightName': 'Air India',
+        'starting': 'Bangalore',
+        'dest': 'Dubai',
+        'total_seats':234,
+        'available_seats': 145,
+        'price':22000
+    },
+    
+    {
+        'flightID':'2EFG23',
+        'flightName': 'Indigo',
+        'starting': 'Mumbai',
+        'dest': 'Singapur',
+        'total_seats': 150 ,
+        'available_seats': 76,
+        'price':20000
+    },
+     
+    {
+        'flightID':'1IDRIS2',
+        'flightName': 'Dubai Air',
+        'starting': 'Dubai',
+        'dest': 'Delhi',
+        'total_seats': 220,
+        'available_seats': 120,
+        'price':30000
+    },
+    
+    {
+        'flightID':'4JN22CS',
+        'flightName': 'Qatar Airways',
+        'starting': 'Qatar',
+        'dest': 'Mumbai',
+        'total_seats':204,
+        'available_seats': 105,
+        'price':34000
+    }
+]
+
+
+class FLIGTHBOOKING:
+
+    def generate_ticket(self, flightID, total_titckets):
+        for ticket in all_flights:
+            if ticket['flightID'] == flightID:
+                for i in range(total_titckets):
+                    print(str(1)+ticket['flightName'][:3].upper()+ticket['starting'][:3].upper()+
+                          str(random.randint(11111,99999))+ticket['dest'][:3].upper())
+                break
+        else:
+            print("No flights are available with this flightID")
+
+    def get_total_cost(self, flightID, total_tickets):
+        for ticket in all_flights:
+            if ticket['flightID'] == flightID:
+                base_cost = ticket['price'] * total_tickets
+                online_fee = round(base_cost * 0.02, 2)
+                gst_amount = round(base_cost * 0.065, 2)
+                total_cost = round(base_cost + online_fee + gst_amount, 2)
+                print(f"Base cost: {base_cost}")
+                print(f"Online fee (2%): {online_fee}")
+                print(f"GST (6.5%): {gst_amount}")
+                print(f"Total cost of the tickets: {total_cost}")
+                break
+        else:
+            print("No flights are available with this flightID")
+
+    def book_tickets(self, flightID, total_tickets):
+        for ticket in all_flights:
+            if ticket['flightID'] == flightID:
+                if ticket['available_seats'] >= total_tickets:
+                    ticket['available_seats'] -= total_tickets
+                    print(f"{total_tickets} tickets booked successfully for flight {ticket['flightName']}.")
+                else:
+                    print("Not enough available seats.")
+                break
+        else:
+            print("No flights are available with this flightID")
+                        
+f1=FLIGTHBOOKING()
+f1.generate_ticket('1cBC234', 3)
+f1.generate_ticket('2EFG23', 5)
+f1.get_total_cost('1cBC234', 3)
+f1.get_total_cost('2EFG23', 5)
+f1.book_tickets('1cBC234', 3)
+f1.book_tickets('2EFG23', 5)
