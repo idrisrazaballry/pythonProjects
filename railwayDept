@@ -1,0 +1,95 @@
+train_details=[
+    {
+    'train_no':52319,
+    'train_name':'Chennai Expresses',
+    'starting':'Bangalore',
+    'end' : 'Chennai',
+    'days_of_run':['MON','WED','FRI','SUN'],
+    'seats_available':{'General':250, 'Sleeper':150, 'AC':100},
+    'price':{'General':250,'Sleeper':800, 'AC':2000}
+    },
+    {
+    'train_no':48523,
+    'train_name':'Chennamma Expresses',
+    'starting':'Bangalore',
+    'end' : 'Kittur',
+    'days_of_run':['SUN','MON','TUE','WED','THURS','FRI','SAT'],
+    'seats_available':{'General':350, 'Sleeper':250, 'AC':200},
+    'price':{'General':400,'Sleeper':800, 'AC':2500}  
+    },
+    {
+    'train_no':89542,
+    'train_name':'Nizamuddeen Expresses',
+    'starting':'Kalaburagi',
+    'end' : 'Bangalore',
+    'days_of_run':['SUN','TUE','THURS','SAT'],
+    'seats_available':{'General':450, 'Sleeper':375, 'AC':200},
+    'price':{'General':200,'Sleeper':750, 'AC':2050}
+    },
+    {
+    'train_no':23451,
+    'train_name':'Vasco-de-gama Expresses',
+    'starting':'Bangalore',
+    'end' : 'Goa',
+    'days_of_run':['MON','TUE','WED','THURS','FRI','SAT'],
+    'seats_available':{'General':250, 'Sleeper':150, 'AC':100},
+    'price':{'General':250,'Sleeper':800, 'AC':2000}
+    },
+    {
+    'train_no':14143,
+    'train_name':'Delhi Expresses',
+    'starting':'Bangalore',
+    'end' : 'Delhi',
+    'days_of_run':['MON','THURS','SUN'],
+    'seats_available':{'General':550, 'Sleeper':750, 'AC':300},
+    'price':{'General':580,'Sleeper':2000, 'AC':5000}
+    }
+]
+
+class RAILWAYDEPT:
+
+    def get_train_name(self, train_no):
+        for train in train_details:
+            if train['train_no'] == train_no:
+                return train['train_name']
+        return "No trains are available"
+
+    def get_train_total_seats(self, train_no):
+        for train in train_details:
+            if train['train_no'] == train_no:
+                return train['seats_available']
+        return "No seats are available"
+
+    def get_train_for_the_day(self, day):
+        result = []
+
+        for train in train_details:
+            if day in train['days_of_run']:
+                result.append(train['train_name'])
+
+        return result
+
+    def total_collection(self, trainno, **kwargs):
+        for train in train_details:
+            if trainno == train['train_no']:
+
+                print("Train Name:", train['train_name'])
+
+                for k, v in kwargs.items():
+
+                    if k in train['price']:
+
+                        amount = v * train['price'][k]
+
+                        print(
+                            k, "-", v,
+                            "*", train['price'][k],
+                            "=", amount
+                        )
+
+r1=RAILWAYDEPT()
+print(r1.get_train_name(14143))
+print(r1.get_train_for_the_day('MON'))
+print(r1.get_train_for_the_day('SUN'))
+print(r1.get_train_total_seats(14143))
+print(r1.total_collection(14143, General=2, Sleeper=1, AC=1))
