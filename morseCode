@@ -1,0 +1,35 @@
+morse_code ={
+    '0':'-----', '1':'.----', '2':'..---', '3':'...--', '4':'....-', '5':'.....', '6':'-....',
+    '7':'--...', '8':'---..', '9':'----.'
+}
+ 
+
+number_morse_code={morse:code for code, morse in morse_code.items()}
+
+
+
+def encode_the_number(number):
+    res=""
+    for code in number:
+        if code in morse_code:
+            res+=morse_code[code]
+        else:
+            return 'number not matching'
+    return res
+
+def decode_the_morse_code(morse_code):
+    res =""
+    codes= morse_code.split()
+    for code in codes:
+        if code in number_morse_code:
+            res+=number_morse_code[code]
+        else:
+            return 'Invalid morse code'
+    return res
+
+
+print(encode_the_number('1234'))
+print("Enter the morse code with 5 chars only and give space and 5 chars:\n")
+print("morse code must be either - or .")
+code=input("Enter morse code: ")
+print(decode_the_morse_code(code))
