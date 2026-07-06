@@ -1,0 +1,55 @@
+all_products={
+    'Bingo':20, 'cola':35, 'oreo':30, 'jimjam':40, 'dite_coke':60, 'chikki':10, 'redbull':200
+}
+cart={}
+
+class vending_machine:
+
+    def __init__(self,items):
+        self.items=items
+        self.cart={}
+
+    def display(self):
+        print("Available Items")
+        for item, price in self.items.items():
+            print(f"{item} : {price}")
+    
+    def add_items(self, item, quantity):
+        if item in self.items:
+            if item in self.cart:
+                self.cart[item]+=quantity
+            else:
+                self.cart[item]=quantity
+            print(f'{quantity} {item} (s) added to cart')
+        else:
+            print("item is not available")
+    
+    def update_items(self, item, quantity):
+        if item in self.cart:
+            if quantity<=0:
+                del self.cart[item]
+                print(f'{item} removed from cart')
+            else:
+                self.cart[item]=quantity
+                print(f"{item} updated to {quantity}")
+        else:
+            print("Items not in cart")
+    
+    def total_bill(self):
+        total=0
+        print("Cart Summary:\n")
+        for item, qty in self.cart.items():
+            price=self.items[item]
+            cost=price*qty
+            print(f"{item} x {qty} = {cost}")
+            total+=cost
+        print(f"Total bill = {total}")
+        return total
+
+vm=vending_machine(all_products)
+vm.display()
+
+vm.add_items('cola', 2)
+vm.add_items('oreo', 3)
+vm.update_items('cola', 1)
+vm.total_bill()
