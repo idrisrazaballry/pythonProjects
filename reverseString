@@ -1,0 +1,17 @@
+'''Reverse the string if count of special char is even'''
+
+s1="I@@! am!@$! Pool!!@#$$ Deadpool!@ Here%^#@! to!@ kill!@# Bad!@#$ guys!@@#$@#! hel9$#@!"
+s2=s1.split()
+s3=" "
+for i in s2:
+    c=0
+    for j in i:
+        if (ord(j)>=65 and ord(j)<=90) or (ord(j)>=97 and ord(j)<=122) or (ord(j)>=48 and ord(j)<=57):
+            continue
+        else:
+            c+=1
+    if c%2==0:
+        s3+=i[::-1]+ " "
+    else:
+        s3+=i+" "
+print(s3)
