@@ -1,0 +1,13 @@
+''' 
+To diplay the frequency of each char in str
+
+'''
+s1="Supercalifraglisticexpalodicious"
+d1={}
+for i in s1:
+    if i not in d1:
+        d1[i]=1
+    else:
+        d1[i]+=1
+for k,v in d1.items():
+    print(k, '-->', v)
