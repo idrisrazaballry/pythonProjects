@@ -1,0 +1,13 @@
+''' swapping the cases without using swapcase method ''' 
+
+s1='EDucaTIon is THE poWEr'
+s2=' '
+print(s1)
+for i in s1:
+    if i==" ":
+        s2+=i
+    elif ord(i)>=65 and ord(i)<=90:
+        s2+=chr(ord(i)+32)
+    elif ord(i)>=97 and ord(i)<=122:
+        s2+=chr(ord(i)-32)
+print(s2)
