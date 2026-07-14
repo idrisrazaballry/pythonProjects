@@ -43,5 +43,4 @@ while True:
         print("Bye!, haapy shopping")
         break
     else:
-
         print("Invalid choice, please try again")
