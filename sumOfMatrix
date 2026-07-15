@@ -1,0 +1,67 @@
+'''Sum of two matrices'''
+row=int(input("Enter the rows:"))
+col=int(input("Enter the col:"))
+
+m1=[[int(input('Enter the value:')) for col in range(col)] for row in range(row)]
+
+print('Matrix 1')
+for i in range(row):
+    for j in range(col):
+        print(m1[i][j], end=' ')
+    print()
+
+m2=[[int(input("Enter the values:")) for col in range(col)] for row in range(row)]
+
+print('Matrix 2')
+for i in range(row):
+    for j in range(col):
+        print(m2[i][j], end=' ')
+    print()
+
+res=[[0 for col in range(col)] for row in range(row)]
+
+for i in range(row):
+    for j in range(col):
+        res[i][j]+=m1[i][j]+m2[i][j]
+    print()
+
+print('Result')
+for i in range(row):
+    for j in range(col):
+        print(res[i][j], end=' ')
+    print()
+
+
+Matrices Multiplication
+row=int(input("Enter the rows:"))
+col=int(input('Enter the col:'))
+
+m1=[[int(input("Enter the values:")) for col in range(col)] for row in range(row)]
+
+print('Matrix 1')
+for i in range(row):
+    for j in range(col):
+        print(m1[i][j], end=' ')
+    print()
+
+m2=[[int(input('Enter the values:')) for col in range(col)] for row in range(row)]
+
+print('Matrix 2')
+for i in range(row):
+    for j in range(col):
+        print(m2[i][j], end=' ')
+    print()
+
+res=[[0 for col in range(col)] for row in range(row)]
+
+for i in range(len(m1)):
+    for j in range(len(m2[0])):
+        for k in range(len(m2)):
+            res[i][j]+=m1[i][k]+m2[k][j]
+    print()
+
+print('Result : ')
+for i in range(row):
+    for j in range(col):
+        print(res[i][j], end=' ')
+    print()
