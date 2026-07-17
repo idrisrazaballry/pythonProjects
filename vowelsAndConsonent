@@ -1,0 +1,13 @@
+'''count the vowels and consonent from the given string'''
+s='Python coding is awesome '
+c=0
+v=0
+for i in s:
+    if i==' ':
+        continue
+    elif i in 'aeiouAEIOU':
+        v+=1
+    else:
+        c+=1
+print('vowels count is:',v)
+print('consonenet count is:', c)
