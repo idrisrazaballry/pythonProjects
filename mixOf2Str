@@ -1,0 +1,10 @@
+Accept two strings and mix the two strings as follows
+s1=input('Enter two string of same length:')
+s2=input()
+s3=""
+# j=len(s2)-1-i
+# if len(s1)==len(s2):
+for i in range(len(s1)):
+    # for j in range(len(s2)-1,len(s2),-1):
+    s3+=s1[i]+s2[len(s2)-1-i]
+print(s3)
