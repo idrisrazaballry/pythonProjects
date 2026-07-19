@@ -1,0 +1,29 @@
+''' WAP to check whether the given string can become mirror string or not '''
+
+s1="MADAM"
+s2=s1[::-1]
+# print(s1,s2)
+i=0
+c=0
+while i<len(s1):
+    if (ord(s1[i])==ord(s2[i])):
+        c+=1
+        i+=1
+if c==len(s1) and c==len(s2):
+    print('miror')
+else:
+    print('Not mirror')
+
+def is_mirror(s):
+    col={'A','H','I','M','O','T','U','V','W','X','Y','m','o','v','w','x','0','8'}
+
+    for i in s:
+        if i not in col:
+            return False
+    return True
+
+s=input("Enter the string:")
+if is_mirror(s):
+    print('Mirror string')
+else:
+    print('Not mirror string')
