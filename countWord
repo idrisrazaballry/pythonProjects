@@ -1,0 +1,13 @@
+'''Count the each word in given string '''
+
+s1="if you always do what you always did you will always get what you always got"
+s2=s1.split()
+
+d={}
+for i in range(len(s2)):
+    if s2[i] not in d:
+        d[s2[i]]=[i]
+    else:
+        d[s2[i]]+=[i]
+for k,v in d.items():
+    print(k, ":", v)
